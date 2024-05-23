@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 14 Pro Max UI</title>
+    <link rel="shortcut icon" href="apple-logo-24.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+        }
+        body{
+            background: #090909;
+        }
+        .main-container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+        }
+        .container-right{
+            width: 65%;
+            height: 80%;
+            border-radius: 20px;
+            scale: 0.9;
+            padding-top: 100px;
+        }
+        .heading{
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            position: sticky;
+            top: 0px;
+        }
+        .container-right button{
+            width: max-content;
+            height: max-content;
+            padding: 10px 15px;
+            background: white;
+            color: rgb(0, 0, 0);
+            border: none;
+            outline: none;
+            border-radius: 10px;
+        }
+        .container-right button:hover{
+            cursor: pointer;
+        }
+        .container-right button:active{
+            box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.479);
+        }
+        .function-group{
+            width: 250px;
+            margin: 50px 0px 0px 250px;
+        }
+        .function-group button{
+            width: 100%;
+            height: 60px;
+            margin: 10px 0px;
+            font-size: 1rem;
+            transition: 0.4s;
+            font-weight: 500;
+        }
+        .function-group button:hover{
+            transform: translateX(20px);
+            transition: 0.4s;
+            border: 1px solid white;
+            color: white;
+            background: #000;
+        }
+        .container{
+            width: 300px;
+            height: 600px;
+            border: 7px solid black;
+            border-radius: 45px;
+            background-image: url(Astronot\ Duvar\ Kağıdı.jpg);
+            background-position: top center;
+            background-size: cover;
+            outline: 1.9px solid #cecece5e;
+            position: relative;
+            cursor: pointer;
+            transition-delay: 1s;
+            transform: translateX(-150px);
+        }
+        .time{
+            color: transparent;
+        }
+        .mobile-status{
+            color: white;
+            width: 95%;
+            padding: 0px 0px 0px 15px;
+            position: absolute;
+            margin-top: 9px;
+            display: flex;
+            align-items: center;
+            font-size: 0.7rem;
+            justify-content: space-between;
+        }
+        .container::before{
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 60px;
+            background: #cecece5b;
+            transform: translateX(293px) translateY(100px);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .btn-one{
+            width: 4px;
+            height: 40px;
+            background: #cecece5b;
+            transform: translateX(-10px) translateY(90px);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .btn-two{
+            width: 4px;
+            height: 60px;
+            background: #cecece5b;
+            transform: translateX(-10px) translateY(100px);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .dynamic-island{
+            max-width: max-content;
+            min-width: 90px;
+            height: 25px;
+            background: #000;
+            margin: -95px auto;
+            border-radius: 20px;
+            transition: 0.6s;
+            position: relative;
+            
+        }
+        .dynamic-island .dynamic-camera{
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            right: 5px;
+            top: 5px;
+            border-right: 3px solid rgb(78, 23, 76);
+            outline: 3px solid rgb(40, 11, 39);
+            background: linear-gradient(45deg,rgb(76, 5, 90),rgba(103, 9, 103, 0.285));
+            opacity: 0.4;
+            scale: 0.66;
+        }
+        .home-slider{
+            width: 130px;
+            height: 4px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.711);
+            position: absolute;
+            bottom: 5px;
+            left: 25%;
+        }
+        .search{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 85px;
+            text-align: center;
+            width: max-content;
+            color: rgb(255, 255, 255);
+            background: rgba(255, 255, 255, 0.408);
+            left: 34%;
+            padding: 5px 10px;
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 300;
+            font-family: 'Poppins', sans-serif;  
+            scale: 0.8;    
+            transition-delay: 0.8s;      
+        }
+        .search i{
+            font-size: 0.9rem;
+        }
+        .apps-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 88%;
+            height: 55px;
+            background: #ffffff69;
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            animation: zoom 0.45s ease;
+        }
+        .apps-container img{
+            border-radius: 10px;
+            width: 45px;
+            height: 45px;
+            filter: contrast(120%);
+            transition-delay: 1s;
+            scale: 1;
+            animation: icons 0.5s linear reverse;
+        }
+        @keyframes icons {
+            to{
+                scale: 3;
+            }
+        }
+        .clock-container{
+            position: absolute;
+            top: 50px;
+            text-align: center;
+            width: 100%;
+            height: max-content;
+            font-size: 3.5rem;
+            color: rgb(255, 255, 255);
+            font-weight: 400;
+            transition-delay: 0.5s;
+        }
+        .clock-container sub{
+            font-size: 14px;
+        }
+        .dynamic-island-call{
+            position: absolute;
+            top: 05px;
+            left: 70px;
+            display: none;
+            transition: 0.5s;
+            width: 220px;
+            height: 45px;
+            border-radius: 35px;
+            background: #000000;
+            z-index: 5;
+            margin-left: -60px;
+            transform: translateX(-10px) translateY(0px);
+            animation: zoom 0.45s ease;
+            color: white;
+            font-size: 0.8rem;
+            transition-delay: 3s;
+        }
+        .dynamic-island-call .img{
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            margin: 0px 8px;
+            background: url(arockiya.jpg);
+            background-position:top center;
+            background-size: cover;
+        }
+        .response{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .response i{
+            font-size: 1.3rem;
+            padding: 4px;
+        }
+        .response i:nth-of-type(odd){
+            color: red;
+            background: #000;
+            border: 1px solid red;
+            border-radius: 50%;
+            rotate: 139deg;
+        }
+        .response i:nth-of-type(even){
+            color: green;
+            background: #000;
+            border: 1px solid green;
+            border-radius: 50%;
+            animation: call-on 2s ease-in-out infinite;
+        }
+        @keyframes call-on{
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-5px);
+            }
+            100%{
+                transform: translateY(0);
+            }
+            
+        }
+        @keyframes zoom{
+            from{
+                scale: 0.2;
+            }
+            to{
+                scale: 1;
+            }
+        }
+        .response{
+            width: 50%;
+            height: 100%;
+        }
+        .dynamic-island-music{
+            position: absolute;
+            top: 05px;
+            left: 70px;
+            display: none;
+            transition: 0.5s;
+            width: 220px;
+            height: 45px;
+            border-radius: 35px;
+            background: #000000;
+            z-index: 5;
+            margin-left: -60px;
+            transform: translateX(-10px) translateY(0px);
+            animation: zoom 0.45s ease;
+            color: white;
+            font-size: 0.7rem;
+            transition-delay: 3s;
+            cursor: pointer;
+        }
+        .music-img{
+            width: 33px;
+            height: 33px;
+            border-radius: 5px;
+            margin: 0px 8px;
+            background: url(Naa-Ready.jpg);
+            background-position:top center;
+            background-size: cover;
+            scale: 0.8;
+        }
+        .music-response{
+            width: 30%;
+            height: 100%;
+            background-image: url(Nt6v.gif);
+            background-position: center;
+            background-size: cover;
+            transform: scale(-1);
+            scale: 0.8;
+
+        }
+        .music-response span{
+            width: 1px;
+            height: 30%;
+            background: white;
+            margin: 0px 1.5px;
+            border-radius: 5px;
+        }
+        .music-player{
+            display: none;
+            width: 95%;
+            height: 25%;
+            background: rgb(0, 0, 0);
+            z-index: 5;
+            position: absolute;
+            left: 7px;
+            top: 5px;
+            border-radius: 28px;      
+            padding: 10px 10px;
+            animation: zoom 0.45s ease;
+            color: white;
+        }
+        .albumn-img{
+            width: 60px;
+            height: 60px;
+            background-image: url("Naa-Ready.jpg");
+            background-position: center;
+            background-size: cover;
+            border-radius: 13px;
+            margin: 10px 0px 0px 5px;
+        }
+        .row-one{
+            width: 95%;
+            display: flex;
+            align-items: center;
+            justify-content:start;
+        }
+        .row-two{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3%;
+        }
+        .row-two i{
+            font-size: 1.8rem;
+            font-weight: normal;
+            color: grey;
+            margin: 0px 5px;
+        }
+        .row-two i:hover{
+            color: white;
+        }
+
+        .row-one p{
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .row-one p span{
+            font-weight: 200;
+            color: rgb(188, 188, 188);
+        }
+        .row-three{
+            width: 80%;
+            height: 1px;
+            background: rgb(50, 50, 50);
+            margin: 4% auto;
+        }
+        .sub-row-three{
+            width: 0%;
+            height: 100%;
+            background: white;
+            animation: loading 100s linear infinite;
+        }
+        @keyframes loading {
+            from{
+                width: 10%;
+            }
+            to{
+                width: 100%;
+            }
+            
+        }
+        .app-row{
+            width: 100%;
+            height: max-content;
+            padding: 0px 15px; 
+            position: absolute;
+            bottom: 210px;   
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;      
+        }
+        
+        .app-row-two{
+            width: 100%;
+            height: max-content;
+            padding: 0px 15px; 
+            position: absolute;
+            bottom: 130px;   
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap; 
+
+        }
+        .app-row i{
+            font-size: 3rem;
+        }
+        
+        .app-row-two i{
+            font-size: 3rem;
+
+        }
+        .widget-one{
+            position: absolute;
+            top: 290px;
+            right: -60px;
+            width: 90%;
+            height: 40%;
+            background-image: url(Widgets.png);
+            background-position:top center;
+            background-size: cover;
+            border-radius: 15px;
+            scale: 0.4;
+        }
+        .widget-one span{
+            color: white;
+            position: absolute;
+            bottom: 18px;
+            right: 95px;
+            padding: 7px 18px;
+            border-radius: 30px;
+            background: #ffffff25;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+         <div class="container-right">
+            <p class="heading"> design work of iPhone 14 pro max with <u>dynamic island</u> functionality. made with only html, css, js.</p>
+           <div class="function-group">
+                <button onclick="reset()">reset</button>
+                <button onclick="expand()">Turn On Call Notification</button>
+                <audio id="ringtone">
+                    <source src="iphone_14.mp3" type="">
+                </audio>
+                <button onclick="music()">Play Music</button>
+                <audio id="play-music">
+                    <source src="naaready.mp3" type="">
+                </audio>
+           </div>
+        </div>
+        <div class="container" id="container">
+            <p class="mobile-status" id="mobile-status">
+                <span class="time" id="time">07:30</span>
+                <span class="icons">
+                    <i class='bx bx-signal-4' ></i>
+                    <i class='bx bx-wifi' ></i>
+                    <i class='bx bxs-battery'></i>
+                </span>
+            </p>
+            <div class="btn-one"></div>
+            <div class="btn-two"></div>
+             <div class="dynamic-island" id="dynamic-island">
+                 <div class="dynamic-camera" id="dynamic-camera"></div>
+             </div>
+             <div class="dynamic-island-call" id="dynamic-island-call">
+                 <div class="profile" style="display: flex;align-items: center;justify-content: center; line-height: 15px;">
+                     <div class="img"></div> Arockiya
+                 </div>
+                 <div class="response">
+                     <i class='bx bxs-phone' ></i>&nbsp;&nbsp;
+                     <i class='bx bxs-phone-call'></i>
+                 </div>
+             </div>
+             <div class="dynamic-island-music" id="dynamic-island-music"  onclick="activemusic() ">
+                 <div class="profile" style="display: flex;align-items: center;justify-content: center; line-height: 15px;">
+                     <div class="music-img"></div> Naa Ready
+                 </div>
+                 <div class="music-response">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                 </div>
+             </div>
+             <div class="music-player" id="music-player">
+                 <div class="row-one">
+                     <div class="albumn-img"></div>&nbsp;&nbsp;
+                     <p>Leo <br><span>Naa Ready <br>Thalapathy Vijay, Anirudh..</span>  </p>
+                 </div>
+                 <div class="row-two">
+                     <i class='bx bx-fast-forward-circle' ></i>
+                     <i class='bx bx-pause-circle'></i>
+                     <i class='bx bx-fast-forward-circle' style="transform: scaleX(-1);"></i>
+                 </div>
+                 <div class="row-three">
+                     <div class="sub-row-three"></div>
+                 </div>
+             </div>
+     
+             <div class="clock-container" id="clock-container">
+                 07:30<sub>PM</sub>
+             </div>
+             <div class="app-row" id="app-row">
+                <i class='bx bxl-facebook-square' style="color: #182b69;background: white;border-radius: 10px;"></i>
+                <i class='bx bxl-instagram' style="color: white;background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);border-radius: 10px;">
+                </i>
+                <i class='bx bxl-amazon' style="background: white; border-radius: 10px;scale: 0.9;"></i>
+                <i class='bx bxl-github' style="background: white; border-radius: 10px;scale: 0.9;"></i>
+             </div>
+             <div class="app-row-two" id="app-row-two">
+                <i class='bx bxl-apple' style="color: #000000;background: white;border-radius: 10px;"></i>
+                <i class='bx bxl-imdb' style="color: rgb(255, 255, 255);background:rgb(224, 173, 5);border-radius: 10px;">
+                </i>
+                <i class='bx bxl-google' style="color: rgb(240, 96, 12);background: #ffffff; border-radius: 10px;scale: 0.9;"></i>
+                <i class='bx bxl-whatsapp' style="background: rgb(33, 185, 81);color: white; border-radius: 10px;scale: 0.9;"></i>
+
+
+            </div>
+            
+             <div class="search" id="search">
+                 <i class='bx bx-search'></i>&nbsp;Search
+             </div>
+             <div class="apps-container" id="apps-container">
+                 <img src="@PNG (1).png" alt="">
+                 <img src="@PNG (2).png" alt="">
+                 <img src="@PNG (3).png" alt="">
+                 <img src="@PNG (4).png" alt="">
+             </div>
+             <div class="home-slider" id="home-slider"></div>
+     
+         </div>
+    </div>
+   
+   
+    
+    <script>
+            var x = document.getElementById("ringtone");
+            var y = document.getElementById("play-music");
+            document.getElementById("dynamic-island").style.border="1px solid #ffffff0f";
+            document.getElementById("container").style.background="#000000";
+            document.getElementById("mobile-status").style.visibility="hidden";
+            document.getElementById("clock-container").style.visibility="hidden";
+            document.getElementById("apps-container").style.display="none";
+            document.getElementById("search").style.visibility="hidden";
+            document.getElementById("home-slider").style.visibility="hidden";
+            document.getElementById("app-row").style.visibility="hidden";
+            document.getElementById("app-row-two").style.visibility="hidden";
+
+        function reset(){
+            document.getElementById("container").style.background="";
+            document.getElementById("mobile-status").style.visibility="visible";
+            document.getElementById("clock-container").style.visibility="visible";
+            document.getElementById("apps-container").style.display="flex";
+            document.getElementById("dynamic-island").style.border="none";
+            document.getElementById("dynamic-island").style.display="block";
+            document.getElementById("dynamic-island-call").style.display="none";
+            document.getElementById("dynamic-island-music").style.display="none";
+            document.getElementById("music-player").style.display="none";
+            document.getElementById("dynamic-camera").style.display="block";
+            document.getElementById("app-row").style.visibility="visible";
+            document.getElementById("app-row-two").style.visibility="visible";
+            document.getElementById("search").style.visibility="visible";
+            document.getElementById("home-slider").style.visibility="visible";
+            y.pause(); 
+            x.pause(); 
+        }
+        function expand(){
+            document.getElementById("dynamic-island-call").style.display="flex";
+            document.getElementById("dynamic-island-call").style.alignItems="center";
+            document.getElementById("dynamic-island-call").style.justifyContent="center";
+            document.getElementById("dynamic-island-call").style.transform="translateX(30px)";
+            document.getElementById("dynamic-camera").style.display="none";
+            document.getElementById("dynamic-island").style.display="none";
+            document.getElementById("dynamic-island-call").style.transition="2s";
+            document.getElementById("dynamic-island-music").style.display="none";
+            x.play();
+            y.pause(); 
+
+        }
+        function music(){
+            document.getElementById("dynamic-island-call").style.display="none";
+            document.getElementById("dynamic-island-music").style.display="flex";
+            document.getElementById("dynamic-island-music").style.alignItems="center";
+            document.getElementById("dynamic-island-music").style.justifyContent="space-between";
+            document.getElementById("dynamic-island-music").style.transform="translateX(30px)";
+            document.getElementById("dynamic-camera").style.display="none";
+            document.getElementById("dynamic-island").style.display="none";
+            document.getElementById("dynamic-island-music").style.transition="2s";
+            y.play();
+            x.pause();
+
+
+        }
+        function activemusic(){
+            document.getElementById("music-player").style.display="block";
+            document.getElementById("time").style.color="white";0
+        }
+        
+    </script>
+    </script>
+</body>
+</html>
